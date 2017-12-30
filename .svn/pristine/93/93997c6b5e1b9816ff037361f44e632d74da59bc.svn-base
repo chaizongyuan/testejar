@@ -1,0 +1,47 @@
+Maven是基于项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建、依赖管理和项目信息管理
+
+@pushd D:\eclipse\testjar\src
+@javac cn\et\Main.java
+@java cn.et.Main
+@pause
+
+@java -jar testjar.jar
+@pause
+
+在项目中用到的
+1.创建项目
+  项目类型  a.javase项目  b.javaee项目
+2.编码阶段
+  编码+添加依赖jar包+TOMCAT配置
+3.编译项目
+ jdk的javac
+4.运行项目（找到项目的main方法）
+ jdk的java命令  
+5.打包发布
+ 
+maven融合了四个阶段（依赖jar包）
+
+maven仓库（Maven仓库就是放置所有JAR文件（WAR，ZIP，POM等等）的地方，
+      所有Maven项目可以从同一个Maven仓库中获取自己所需要的依赖JAR）
+查询中央仓库地址 http://search.maven.org
+1.jar包下载太过分散 导致开发人员开发周期延长 maven提供了中央仓库将所有的jar包聚合在一起
+2.中央仓库 计算网络资源有限 各地出现了各自的私服 降低中心服务的压力 开发者就近原则获取最近的私服 下载jar包
+3.本地项目的开发 如果需要下载jar包 必须依赖maven软件 maven软件需要配置私服的地址 配置本地缓存jar包位置
+
+私服：一种特殊的远程仓库，它是架设在局域网内的仓库服务，私服代理广域网上的远程仓库，供局域网内的Maven用户使用。
+私服优点：节省自己的外网带宽、加速Maven构建、部署第三方构件、提高稳定性，增强控制、降低中央仓库的负荷。
+
+maven项目类型结构
+
+
+mvn archetype:generate ：创建 Maven 项目 
+mvn compile ：编译源代码 
+mvn test-compile ：编译测试代码 
+mvn test ： 运行应用程序中的单元测试 
+mvn site ： 生成项目相关信息的网站 
+mvn clean ：清除目标目录中的生成结果 
+mvn package ： 依据项目生成 jar 文件 
+mvn install ：在本地 Repository 中安装 jar 
+mvn deploy：将jar包发布到远程仓库 
+mvn eclipse:eclipse ：生成 Eclipse 项目文件
+
